@@ -14,7 +14,7 @@ Code for ISU-MAVRIC's 900 MHz interface
 - [PySerialTransfer Library](https://github.com/PowerBroker2/pySerialTransfer)
 
 ## Environment Setup
-A generic platformIO environment setup can be found here: [jetbrains.com](https://platformio.org/install/ide?install=vscode). This will help you install and open platformio.
+A generic platformIO environment setup can be found here: [platformio.org](https://platformio.org/install/ide?install=vscode). This will help you install and open platformio.
 
 This repository contains two PlatformIO folders: [Transmitter](https://github.com/ISU-MAVRIC/MAVRIC-900MhzRadio/tree/main/Transmitter) and [Reciever](https://github.com/ISU-MAVRIC/MAVRIC-900MhzRadio/tree/main/Reciever).
 To open one of these directories, you need to first clone the repository with: 
