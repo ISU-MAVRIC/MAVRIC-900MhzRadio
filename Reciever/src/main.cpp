@@ -62,6 +62,7 @@ void setup() {
   roverTX.drive = 0;
   roverTX.steer = 0;
   roverTX.mode = 0;
+  timeouts = 0;
 }
 
 void loop() {
@@ -71,7 +72,7 @@ void loop() {
     uint8_t len = sizeof(buf);
 
     if (rf95.recv(buf, &len)) { // read values to struct
-      digitalWrite(LED_BUILTIN, HIGH);
+      digitalWrite(BLINKER, HIGH);
       memcpy(&CtrlRead, buf, sizeof(CtrlRead));
       roverTX.drive = CtrlRead.drive;
       roverTX.steer = CtrlRead.steer;
@@ -83,7 +84,7 @@ void loop() {
   // if the time between last message and current time is
   // greater than timeout, add a timeout occurance
   if(time - lastTime > TIMEOUT) {
-    timeouts = timeouts + 1;
+    ++timeouts;
   }
   // if too many timeouts occur, set all outputs to zero
   if (timeouts > MAX_TIMEOUTS) {
@@ -96,9 +97,10 @@ void loop() {
     // test code to print recieved values
     Serial.print("Drive: ");
     Serial.print(CtrlRead.drive,12);
-    Serial.print("    ");
-    Serial.print("Steer: ");
-    Serial.println(CtrlRead.steer,12);
+    Serial.print("    Steer: ");
+    Serial.print(CtrlRead.steer,12);
+    Serial.print("    Timeout: ");
+    Serial.println(timeouts);
   */
     // transfer recieved struct to serialtransfer library
     uint16_t sendSize = 0;

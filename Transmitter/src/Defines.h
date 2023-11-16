@@ -1,5 +1,5 @@
 //frequency channel and rf95 instancing
-#define RF95_FREQ 915.0
+#define RF95_FREQ 868.0
 
 
 #define BOARD BOARD_32U4 //BOARD_M0
