@@ -7,7 +7,7 @@ IT MAY NOT WORK WITH CURRENT RECIEVER CODE
 import time
 from pySerialTransfer import pySerialTransfer as txfer
 
-port = 'COM7'
+port = 'COM18'
 
 drive = 0.0
 steer = 0.0
