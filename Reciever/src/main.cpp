@@ -96,9 +96,11 @@ void loop() {
   /*
     // test code to print recieved values
     Serial.print("Drive: ");
-    Serial.print(CtrlRead.drive,12);
+    Serial.print(roverTX.drive,12);
     Serial.print("    Steer: ");
-    Serial.print(CtrlRead.steer,12);
+    Serial.print(roverTX.steer,12);
+    Serial.print("    Mode: ");
+    Serial.print(roverTX.mode, 2);
     Serial.print("    Timeout: ");
     Serial.println(timeouts);
   */
@@ -106,4 +108,5 @@ void loop() {
     uint16_t sendSize = 0;
     sendSize = roverTransfer.txObj(roverTX, sendSize);
     roverTransfer.sendData(sendSize);
+    delay(100);
 }

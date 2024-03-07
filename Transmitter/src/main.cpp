@@ -153,4 +153,5 @@ void loop() {
   txStruct.steer = joyY;
   rf95.send((uint8_t *)&txStruct, sizeof(txStruct));
   digitalWrite(BLINKER, LOW);
+  delay(100);
 }
