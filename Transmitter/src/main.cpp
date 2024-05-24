@@ -104,7 +104,7 @@ void loop() {
       // read analog values from joystick and convert them 
       // from analog to float from -1 to 1
       joyX = (analogRead(joyXpin)-500.0)/500.0;
-      joyY = -1*(analogRead(joyYpin)-500.0)/500.0;
+      joyY = (analogRead(joyYpin)-500.0)/500.0;
       modeSWout = digitalRead(modeSW);
       // changes drive mode when modeSW is high
       if (modeSWout == 0) {
